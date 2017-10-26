@@ -1,5 +1,6 @@
 package factorywarehouse;
 
+import accounts.Account;
 import inputoutput.Display;
 import user.User;
 
@@ -16,14 +17,23 @@ public class UserWarehouse {
         return users.size();
     }
 
-    public static void addToWarehouse(User userToAdd) {
+    public static void addUserToWarehouse(User userToAdd) {
         users.add(userToAdd);
     }
 
-    public static void printArrayList() {
-        for (User obj:users) {
-            System.out.println(obj.userName + " " + obj.idNumber);
+    public static void printWarehouse() {
+        for (User user : users) {
+            String userName = user.getUserName();
+            int userIdNumber = user.getIdNumber();
+            ArrayList<Account> accounts = user.getAccounts();
+            System.out.println("----------------------------------");
+            System.out.println("User name = " + userName);
+            System.out.println("User id number = " + userIdNumber);
+            System.out.println("User accounts = " + accounts);
         }
     }
 
+    public static boolean hasUser(User user) {
+        return users.contains(user);
+    }
 }

@@ -12,4 +12,8 @@ public class Display {
         return scanner.nextLine();
     }
 
+    public static void welcomeMessage() {
+        System.out.println("******************\nWelcome to ATM Lab\n******************");
+    }
+
 }

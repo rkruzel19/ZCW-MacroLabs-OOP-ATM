@@ -1,5 +1,8 @@
+import factorywarehouse.AccountFactory;
 import factorywarehouse.UserFactory;
 import factorywarehouse.UserWarehouse;
+import inputoutput.Display;
+import user.User;
 
 /**
  * Created by iyasuwatts on 10/17/17.
@@ -7,13 +10,13 @@ import factorywarehouse.UserWarehouse;
 public class Main {
 
     public static void main(String[] args){
-        System.out.println(UserWarehouse.getWarehouseSize());
-        UserFactory.createUser();
-        UserFactory.createUser();
-        UserFactory.createUser();
-        System.out.println(UserWarehouse.getWarehouseSize());
-        UserWarehouse.printArrayList();
-        //.out.println();;
+        Display.welcomeMessage();
+
+        User user = UserFactory.createUser();
+        user.addNewAccount(AccountFactory.createAccount());
+
+        System.out.println(user.printUserAccounts());
+
     }
 }
 

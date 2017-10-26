@@ -13,12 +13,13 @@ public class UserFactory {
 
     public static User createUser() {
         String userName = Display.userInput("Enter user name");
+        return createUser(userName);
+    }
+
+    public static User createUser(String userName) {
         User user = new User(userName, UserWarehouse.getWarehouseSize());
-        UserWarehouse.addToWarehouse(user);
-        //public void toString() {
-        //System.out.println(user.user);
+        UserWarehouse.addUserToWarehouse(user);
 
         return user;
     }
-
 }
